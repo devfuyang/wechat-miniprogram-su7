@@ -9,7 +9,7 @@
 ---
 
 ## 🌟 功能演示
-(/screenshots/1.jpg)
+![功能演示截图](/screenshots/1.jpg)
 ---
 
 ## 🛠️ 技术栈
