@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="background">
+    <image src="/images/bj.png" mode='scaleToFill' class="background-image"></image>
+    <text class="license-plate1">{{licensePlate1}}</text>
+    <text class="license-plate">{{licensePlate}}</text>
+  </view>
+    <view class="content" wx:if="{{hasInfo}}">
+      <view class="item">
+        <text class="label">昵称：</text>
+        <text class="value">{{owner}}</text>
+      </view>
+      <!-- 添加性别显示 -->
+      <view class="item">
+        <text class="label">性别：</text>
+        <image 
+          wx:if="{{gender === '男'}}" 
+          src="/images/man.png" 
+          mode="aspectFit" 
+          class="gender-image"
+        ></image>
+        <image 
+          wx:elif="{{gender === '女'}}" 
+          src="/images/woman.png" 
+          mode="aspectFit" 
+          class="gender-image"
+        ></image>
+        <image 
+          wx:else 
+          src="/images/nomen.png" 
+          mode="aspectFit" 
+          class="gender-image"
+        ></image>
+      </view>
+      <view class="item">
+        <text class="label">版本：</text>
+        <text class="value">{{version}}</text>
+      </view>
+      <view class="item">
+        <text class="label">颜色：</text>
+        <text class="value">{{color}}</text>
+      </view>
+      <view class="item">
+        <text class="label">内饰：</text>
+        <text class="value">{{interior}}</text>
+      </view>
+      <view class="item">
+        <text class="label">轮毂：</text>
+        <text class="value">{{wheels}}</text>
+      </view>
+      <view class="item">
+        <text class="label">群归属：</text>
+        <text class="value">{{group}}</text>
+      </view>
+    </view>
+
+    <view class="content1" wx:else>
+      <text style="font-size: 24px;">呜呜~</text>
+      <text style="font-size: 24px;">暂未收录 / 不在群内</text>
+    </view>
+  <!-- 晓得咯按钮 -->
+  <view class="sdn" bindtap="handleButtonClick">晓得咯</view>
+</view>

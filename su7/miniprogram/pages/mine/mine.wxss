@@ -1,0 +1,116 @@
+/* @font-face {
+  font-family: 'HappyZcool-2016';
+  src: url('/fonts/font.ttf');
+} */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100vh;
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: 800;
+}
+
+.background {
+  width: 100%;
+  height: 200px; /* 根据背景图高度调整 */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.background-image {
+  width: 70%;
+  height: 40%;
+  position: absolute;
+  left: 15%;
+  z-index: 1;
+}
+.license-plate1 {
+  font-size: 33px;
+  font-weight: bold;
+  color: #000; /* 车牌号颜色 */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 添加阴影效果 */
+  z-index: 2;
+  font-family: '黑体';
+  margin-right: 35px;
+  transform: scaleY(1.5); /* 水平拉伸1.5倍 */
+}
+.license-plate {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000; /* 车牌号颜色 */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 添加阴影效果 */
+  z-index: 2;
+  font-family: '黑体';
+  margin-right: 10px;
+  transform: scaleY(1.5); /* 水平拉伸1.5倍 */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30%;
+  width: 80%;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 18px;
+  color: #666;
+}
+
+.value {
+  font-size: 18px;
+  color: #333;
+  margin-left: 10px;
+}
+/* 自定义按钮样式 */
+.sdn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 35%; /* 按钮宽度占满容器 */
+  height: 40px;
+  background-color: #42B5EC; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 24px;
+  border-radius: 15px; /* 圆角 */
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: bold;
+}
+.no-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 100px;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  width: 80%; /* 按钮宽度占满容器 */
+  height: 40px;
+  background-color: #42B5EC; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 24px;
+  border-radius: 15px; /* 圆角 */
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: bold;
+}
+.gender-image {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 10px;
+}

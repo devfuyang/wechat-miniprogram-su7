@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="header">
+    <text class="title-line1">{{text1}}</text>
+    <text class="title-line2">{{text2}}</text>
+  </view>
+
+  <view class="qrcode-container">
+    <image class="qrcode" src="{{image1}}" show-menu-by-longpress="{{true}}"></image>
+  </view>
+
+  <view class="footer" wx:if="{{hasInfo}}">
+    <text class="tip-line1">{{text3}}</text>
+    <text class="tip-line2">{{text4}}</text>
+  </view>
+
+  <view class="qrcode-container1" wx:if="{{hasInfo}}">
+    <image class="qrcode" src="{{image2}}" show-menu-by-longpress="{{true}}"></image>
+  </view>
+</view>

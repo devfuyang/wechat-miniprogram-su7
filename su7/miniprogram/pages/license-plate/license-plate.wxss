@@ -1,0 +1,140 @@
+/* pages/license-plate/license-plate.wxss */
+/* @font-face {
+  font-family: 'HappyZcool-2016';
+  src: url('/fonts/font.ttf');
+} */
+.container {
+  padding: 32rpx;
+  min-height: 100vh;
+}
+.plate{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-top: 10%;
+}
+.plate1{
+  font-size: 25rpx;
+}
+.plate-display {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0 40rpx;
+}
+
+.plate-char {
+  position: relative;
+  width: 80rpx;
+  height: 86rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 8rpx;
+  margin: 0 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  background: #ffffff;
+  padding-right: 8rpx;
+  max-width: 60rpx;
+}
+
+.search-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 550rpx;
+  display: flex;
+  background: #BFBFBF;
+  color: #fff;
+  border-radius: 48rpx;
+  width: 200rpx;
+  height: 80rpx;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: 100;
+  font-size: 50rpx;
+}
+
+button.search-btn.active {
+  background: #007AFF !important;
+  color: #fff !important;
+}
+
+.keyboard-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.keyboard-content {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 32rpx 32rpx 0 0;
+}
+
+.province-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 24rpx 9rpx;
+  row-gap: 24rpx;
+}
+
+.keyboard-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 16rpx;
+}
+
+.province-item{
+  padding: 24rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  border: 2rpx solid #ddd;
+}
+.keyboard-grid1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30rpx 5rpx;
+  row-gap: 30rpx;
+}
+
+.key-item {
+  padding: 20rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  border: 2rpx solid #ddd;
+}
+
+.delete-key {
+  background: #e0e0e0;
+}
+
+.double-width {
+  grid-column: span 2; /* 让元素跨越两列 */
+}
+
+.arrow-down {
+  position: absolute;
+  right: 8rpx;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.active-border {
+  /* border-color: #79BA72; */
+  border: 2rpx solid #79BA72 !important;
+}
+.disabled-key {
+  opacity: 0.5;
+  pointer-events: none;
+}

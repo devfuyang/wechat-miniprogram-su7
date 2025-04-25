@@ -1,0 +1,123 @@
+<view class="container">
+  <!-- 车牌录入 -->
+  <view class="background">
+    <image src="/images/bj.png" mode='scaleToFill' class="background-image"></image>
+    <view class="plate-display1">
+      <view class="plate-char1" wx:for="{{plateChars1}}" wx:key="index" data-index="{{index}}" bindtap="onCharTap" >
+        {{item || ' '}}
+      </view>
+    </view>
+    <view class="plate-display2">
+      <view class="plate-char2" wx:for="{{plateChars2}}" wx:key="index" data-index="{{index}}" bindtap="onCharTap" >
+        {{item || ' '}}
+      </view>
+    </view>
+  </view>
+    <!-- 省份选择键盘 -->
+    <view class="keyboard-modal" wx:if="{{showProvinceKey}}">
+    <view class="keyboard-content">
+      <view class="province-grid">
+        <view wx:for="{{provinces}}" wx:key="index" 
+              class="province-item" bindtap="selectProvince" data-value="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 字母数字键盘 -->
+  <view class="keyboard-modal" wx:if="{{showAlphaNumKey}}">
+  <view class="keyboard-content">
+    <view class="keyboard-grid1">
+      <block wx:for="{{alphaNumKeys}}" wx:key="index">
+        <view class="key-item {{item === 'x' ? 'delete-key double-width' : item === '确认' ? 'confirm-key double-width' : ''}}" 
+              bindtap="selectKey" data-value="{{item}}">
+          {{item === 'x' ? '⌫' : item}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+  <!-- 昵称填写 -->
+  <view class="form-item">
+    <text class="label">昵称</text>
+    <input class="input-field" bindinput="handleNicknameInput" />
+  </view>
+    <!-- 性别选择 -->
+<view class="form-item">
+  <text class="labelsex">性别</text>
+  <view class="gender-container">
+    <image 
+      src="/images/man.png" 
+      mode="aspectFit" 
+      class="{{selectedGender === '男' ? 'gender-selected' : ''}}" 
+      bindtap="selectGender" 
+      data-gender="男"
+    />
+    <image 
+      src="/images/woman.png" 
+      mode="aspectFit" 
+      class="{{selectedGender === '女' ? 'gender-selected' : ''}}" 
+      bindtap="selectGender" 
+      data-gender="女"
+    />
+    <image 
+      src="/images/nomen.png" 
+      mode="aspectFit" 
+      class="{{selectedGender === '保密' ? 'gender-selected' : ''}}" 
+      bindtap="selectGender" 
+      data-gender="保密"
+    />
+  </view>
+</view>
+  <!-- 版本选择 -->
+  <view class="form-item">
+    <text class="label">版本</text>
+    <picker bindchange="handleVersionChange" range="{{versions}}">
+      <view class="picker-field">
+        {{selectedVersion || '请选择版本'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 颜色选择 -->
+  <view class="form-item" disabled="{{!selectedVersion}}">
+    <text class="label">颜色</text>
+    <picker bindchange="handleColorChange" range="{{colors}}" disabled="{{!selectedVersion}}">
+      <view class="picker-field">
+        {{selectedColor || '请选择颜色'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 内饰选择 -->
+  <view class="form-item" disabled="{{!selectedVersion}}">
+    <text class="label">内饰</text>
+    <picker bindchange="handleInteriorChange" range="{{interiors}}" disabled="{{!selectedVersion}}">
+      <view class="picker-field">
+        {{selectedInterior || '请选择内饰'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 轮毂选择 -->
+  <view class="form-item" disabled="{{!selectedVersion}}">
+    <text class="label">轮毂</text>
+    <picker bindchange="handleWheelsChange" range="{{wheelsList}}" disabled="{{!selectedVersion}}">
+      <view class="picker-field">
+        {{selectedWheels || '请选择轮毂'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 归属群选择 -->
+  <view class="form-item" disabled="{{!selectedVersion}}">
+    <text class="label">归属</text>
+    <picker bindchange="handleGroupChange" range="{{groups}}" disabled="{{!selectedVersion}}">
+      <view class="picker-field">
+        {{selectedGroup || '请选择归属群'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 按钮组 -->
+  <view class="button-group">
+    <view class="cancel-button" bindtap="handleCancel">取消填写</view>
+    <view class="confirm-button" bindtap="handleConfirm">确认提交</view>
+  </view>
+</view>

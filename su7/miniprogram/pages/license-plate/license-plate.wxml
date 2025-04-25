@@ -1,0 +1,54 @@
+<!--pages/license-plate/license-plate.wxml-->
+<view class="container">
+  <!-- 车牌显示区 -->
+  <view class="plate">
+    <!-- <text class="plate1">车牌号码</text> -->
+    <view class="plate-display">
+    <view class="plate-char {{activeIndex === index ? 'active-border' : ''}}" wx:for="{{plateChars}}" wx:key="index" data-index="{{index}}" bindtap="onCharTap" wx:class="{{activeIndex === index ? 'active-border' : ''}}">
+      {{item || ' '}}
+      <image 
+        src="/images/down.png" 
+        class="arrow-down"
+        wx:if="{{index === 0}}"
+        bindtap="onProvinceTap"
+      />
+    </view>
+  </view>
+  </view>
+  
+  <view wx:if="{{!hasInfo}}" style="position: absolute; top: 400rpx;z-index: 1;font-size: 13px;color:#BFBFBF;">
+    <text>小提示：您的车辆信息还未添加，可以在【我的米】中添加</text>
+  </view>
+  <!-- 搜索按钮 -->
+  <button  class="search-btn {{isValid ? 'active' : ''}}" 
+           bindtap="onSearch" >
+    搜  索
+  </button>
+  
+  <!-- 省份选择键盘 -->
+  <view class="keyboard-modal" wx:if="{{showProvinceKey}}">
+    <view class="keyboard-content">
+      <view class="province-grid">
+        <view wx:for="{{provinces}}" wx:key="index" 
+              class="province-item" bindtap="selectProvince" data-value="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 字母数字键盘 -->
+  <view class="keyboard-modal" wx:if="{{showAlphaNumKey}}">
+  <view class="keyboard-content">
+    <view class="keyboard-grid1">
+      <block wx:for="{{alphaNumKeys}}" wx:key="index">
+        <view class="key-item {{item === 'x' ? 'delete-key double-width' : ''}}" 
+              bindtap="selectKey" data-value="{{item}}">
+          {{item === 'x' ? '⌫' : item}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+</view>

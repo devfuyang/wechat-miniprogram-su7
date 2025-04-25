@@ -1,0 +1,60 @@
+<view class="container">
+  <!-- 地图 -->
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="14" bindcallouttap="onMarkerTap" bindtap="hideCard" bindregionchange="hideCard" class="full-screen-map">
+  </map>
+  <!-- 定位图标 -->
+  <view class="location-icon" bindtap="showCard" style="bottom: {{LocationIconBottom}}px;">
+    <image src="/images/dingwei.png" mode="aspectFit"></image>
+  </view>
+  <view wx:if="{{!hasInfo && showCardFlag}}" class="carfridnoinfo card">
+    <text style="font-size: 22px;font-weight: bold;">未查询到您的车辆信息</text>
+    <text style="margin-top: 30px;">请先录入车辆信息！</text>
+    <view class="dingweinoinfo">
+        <view class="sdn" bindtap="addcarinfo">立即添加</view>
+    </view>
+  </view>
+  <view wx:elif="{{hasInfo && showCardFlag}}"  class="carfrid card">
+    <view wx:if="{{selectedMarker && !ismymarker}}">
+      <view class="infomark">
+        <text class="carn">{{carnum1}}·{{carnum2}}</text>
+        <text class="carv">{{carversion}}</text>
+      </view>
+      <view class="infodowmmark" >
+        <view><text style="color: red;">{{timeDiffa}}</text> 距离您 <text style="color: red;">{{distance}}</text></view>
+        <view class="infomark">
+          <text class="carc">{{color}}</text> 
+          <view class="carm">
+            <image src="{{sexx === '男' ? '/images/man.png' : sexx === '女' ? '/images/woman.png' : '/images/nomen.png'}}" mode='aspectFit' class="seximage"></image>
+          </view>
+        </view>
+        <text>{{interior}}</text>
+        <view class="infomark">
+          <text class="carw">{{wheels}}</text>
+          <text class="carg">{{group}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="info">
+        <text style="font-size: 22px;font-weight: bold;">{{licensePlate1}}·{{licensePlate}}</text>
+        <text style="font-weight: bold;">{{mycarversion}}</text>
+      </view>
+      <view wx:if="{{isuplocation=='1'}}" class="infodowm">
+        <view>您<text style="color: red;">{{uplocationtimediff}}</text>上传过位置</view>
+        <view>目前在 <text style="color: red;">{{myaddress}}</text> 附近</view>
+        <view class="dingwei">
+          <view class="sdn" bindtap="uploadLocation">更新定位</view>
+          <view class="sdnn" bindtap="deleteLocation">删除定位</view>
+        </view> 
+      </view>
+      <view wx:else class="infodowm">
+        <text>未查询到您的定位历史</text>
+        <view>当前位置，在 <text>{{address}}</text> 附近</view>
+        <view class="dingwei">
+          <view class="sdn" bindtap="uploadLocation">上传定位</view>
+          <view class="sdnn" bindtap="deleteLocation">删除定位</view>
+        </view> 
+      </view>
+    </view>
+  </view>
+</view>

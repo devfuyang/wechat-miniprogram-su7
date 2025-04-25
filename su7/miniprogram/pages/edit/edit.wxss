@@ -1,0 +1,254 @@
+.container {
+  padding: 20px;
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: 300;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  /* 新增容器宽度限制 */
+  width: 100%;
+}
+.label {
+  width: 100px; /* 固定宽度 */
+  min-width: 100px; /* 最小宽度与固定宽度一致 */
+  margin-left: 30px;
+  flex-shrink: 0;
+  font-size: 21px;
+  color: #333;
+}
+.labelsex {
+  width: 70px; /* 固定宽度 */
+  min-width: 70px; /* 最小宽度与固定宽度一致 */
+  margin-left: 30px;
+  flex-shrink: 0;
+  font-size: 21px;
+  color: #333;
+  /* border: 1px solid rgb(219, 19, 159);  */
+}
+.background {
+  width: 100%;
+  height: 200px; /* 根据背景图高度调整 */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.background-image {
+  width: 70%;
+  height: 40%;
+  position: absolute;
+  left: 15%;
+  z-index: 1;
+}
+.plate-display1 {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  margin-left: 5px;
+}
+.plate-display2 {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  margin-left: 15px;
+}
+
+.plate-char1 {
+  position: relative;
+  width: 50rpx;
+  height: 100rpx;
+  /* border: 2rpx solid #ddd; */
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58rpx;
+  max-width: 60rpx;
+  z-index: 2;
+  font-weight: bold;
+  color: #000; /* 车牌号颜色 */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 添加阴影效果 */
+  font-family: '黑体';
+  transform: scaleY(1.5); /* 水平拉伸1.5倍 */
+}
+.plate-char2 {
+  position: relative;
+  width: 50rpx;
+  height: 100rpx;
+  /* border: 2rpx solid #ddd; */
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65rpx;
+  color: #333;
+  max-width: 60rpx;
+  z-index: 2;
+  font-weight: bold;
+  color: #000; /* 车牌号颜色 */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 添加阴影效果 */
+  font-family: '黑体';
+  transform: scaleY(1.5); /* 水平拉伸1.5倍 */
+}
+
+.input-field {
+  width: 180px;  /* 右侧固定宽度 */
+  flex-shrink: 0; /* 禁止右侧伸缩 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left: -30px;
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: 800;
+}
+
+.picker-field {
+  width: 200px;  /* 右侧固定宽度 */
+  flex-shrink: 0; /* 禁止右侧伸缩 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 18px;
+  box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+  color: #666;
+  margin-left: -30px;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap:20px;
+
+}
+
+.confirm-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 40%; /* 按钮宽度占满容器 */
+  height: 40px;
+  background-color: #42B5EC; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 21px;
+  border-radius: 15px; /* 圆角 */
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: bold;
+}
+.cancel-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 40%; /* 按钮宽度占满容器 */
+  height: 40px;
+  background-color: #000; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 21px;
+  border-radius: 15px; /* 圆角 */
+  font-family: 'HappyZcool-2016', sans-serif;
+  font-weight: bold;
+}
+
+.keyboard-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.keyboard-content {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 32rpx 32rpx 0 0;
+}
+
+.province-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 24rpx 9rpx;
+  row-gap: 24rpx;
+}
+
+.keyboard-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 16rpx;
+}
+
+.province-item{
+  padding: 24rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  border: 2rpx solid #ddd;
+  font-family: '微软雅黑';
+}
+.keyboard-grid1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30rpx 5rpx;
+  row-gap: 30rpx;
+}
+
+.key-item {
+  padding: 20rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  border: 2rpx solid #ddd;
+  font-family: '微软雅黑';
+}
+
+.delete-key {
+  background: #e0e0e0;
+}
+
+.double-width {
+  grid-column: span 2; /* 让元素跨越两列 */
+}
+
+.arrow-down {
+  position: absolute;
+  right: 8rpx;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.plate-char.active-border {
+  border-color: #79BA72;
+}
+.disabled-key {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.gender-container {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  gap: 30px;
+  /* border: 1px solid rgb(219, 19, 159);  */
+}
+
+.gender-container image {
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+}
+
+.gender-selected {
+  /*  border: 1px solid #79BA72 !important;选中样式，可根据需要修改 */
+  box-shadow: 0 0 10px 5px rgba(150, 142, 142, 0.3); 
+}
